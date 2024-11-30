@@ -33,9 +33,10 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100, name = "usr_nome")
+    @Column(nullable = false, length = 100)
     private String nome;
 
+    @Column(nullable = false, length = 100)
     private String dataCadastro;
 
     @OneToOne(cascade = CascadeType.ALL)
