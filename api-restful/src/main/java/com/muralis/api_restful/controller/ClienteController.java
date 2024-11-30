@@ -20,8 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.muralis.api_restful.dto.ClienteRequestDTO;
 import com.muralis.api_restful.dto.ClienteResponseDTO;
 import com.muralis.api_restful.entity.Cliente;
-
-import service.ClienteService;
+import com.muralis.api_restful.service.ClienteService;
 
 @RestController
 @RequestMapping("/clientes")

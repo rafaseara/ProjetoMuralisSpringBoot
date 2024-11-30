@@ -1,4 +1,4 @@
-package service;
+package com.muralis.api_restful.service;
 
 import java.util.List;
 
