@@ -1,11 +1,9 @@
 package com.muralis.api_restful.service;
 
 import java.util.List;
-
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.muralis.api_restful.entity.Cliente;
 import com.muralis.api_restful.repository.ClienteRepository;
 
@@ -23,8 +21,8 @@ public class ClienteService {
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
     }
 
-    public List<Cliente> findByNome(String nome) {
-        return clienteRepository.findByNomeContaining(nome);
+    public List<Cliente> findByNomeOrContato(String nome, String contato) {
+        return clienteRepository.findByNomeOrContato(nome, contato);
     }
 
     public Cliente save(Cliente cliente) {

@@ -3,20 +3,10 @@ package com.muralis.api_restful.controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import com.muralis.api_restful.dto.ClienteRequestDTO;
 import com.muralis.api_restful.dto.ClienteResponseDTO;
 import com.muralis.api_restful.entity.Cliente;
@@ -29,8 +19,12 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping
-    public ResponseEntity<List<ClienteResponseDTO>> getAll(@RequestParam(required = false) String nome) {
-        List<Cliente> clientes = (nome != null) ? clienteService.findByNome(nome) : clienteService.findAll();
+    public ResponseEntity<List<ClienteResponseDTO>> getAll(
+            @RequestParam(required = false) String nome,
+            @RequestParam(required = false) String contato) {
+        List<Cliente> clientes = clienteService.findByNomeOrContato(
+                nome != null ? nome : "", 
+                contato != null ? contato : "");
         return ResponseEntity.ok(clientes.stream().map(ClienteResponseDTO::new).toList());
     }
 
