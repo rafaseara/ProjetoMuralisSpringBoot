@@ -54,13 +54,19 @@ Dependências:
    - Inicie o serviço: net start mysql
 
 # Testes no Insomnia 
+
+Para demontrar o funcionamento da API realizei testes no Insomnia, para ve-los com maior detalhamento clique no link abaixo, assim você será redirecionado para o documento em questão
+
+👉 [Documento de teste](https://github.com/rafaseara/ProjetoMuralisSpringBoot/edit/main/doc/insomnia-tests.md)
+
 # Aprendizado
 
-Realizar este projeto me trouxe diversos novos aprendizados, entre os principais gostaria de comentar sobre o conceito da aplicação de uma arquitetura Restful, que não sabia a diferença clara na hora de implementar entre esta arquitetura e apenas um API Rest. Além do mais, pesquisei mais sobre alguma boas práticas e pude criar uma classe especificamente para tratar de exceções. E, a partir de um curso que realizei para saber melhor os conceitos e a prática desta API, pude aprender sobre a classe record, que acabou sendo muito útil e mais simples, uma funcionalidade que não havia antes visto. Apesar de, neste caminho para a conclusão do meu projeto ter encontrado algumas dificuldades, como garantir que cada camada (padrão CSR) tivesse uma responsabilidade específica, tornando o código mais fácil de gerenciar, testar e dimensionar. Gostaria ja de aproveitar para agradecer [Muralis Tecnologia](https://www.muralis.com.br/) que me deu esta oportunidade de demonstrar meus conhecimentos técnicos, a plataforma [Alura](https://www.alura.com.br/) que me disponibilizou conteúdo de qualidade para que eu pudesse entender melhor como desenvolver uma API Restful em Java, ao meu colega [Leonardo](https://github.com/Pokernol) que me auxilio com algumas das minhas dúvidas e por último ao [Ruan](https://github.com/ruann-fernandess) que foi um ótimo amigo durante todo este percurso.
+Realizar este projeto me trouxe diversos novos aprendizados, entre os principais gostaria de comentar sobre o conceito da aplicação de uma arquitetura Restful, que não sabia a diferença clara na hora de implementar entre esta arquitetura e apenas um API Rest. Além do mais, pesquisei mais sobre alguma boas práticas e pude criar uma classe especificamente para tratar de exceções. E, a partir de um curso que realizei para saber melhor os conceitos e a prática desta API, pude aprender sobre a classe record, que acabou sendo muito útil e mais simples, uma funcionalidade que não havia antes visto. Apesar de, neste caminho para a conclusão do meu projeto ter encontrado algumas dificuldades, como garantir que cada camada (padrão CSR) tivesse uma responsabilidade específica, e a boa implementação do Mapper, tornando o código mais fácil de gerenciar, testar e dimensionar. Gostaria ja de aproveitar para agradecer [Muralis Tecnologia](https://www.muralis.com.br/) que me deu esta oportunidade de demonstrar meus conhecimentos técnicos, a plataforma [Alura](https://www.alura.com.br/) que me disponibilizou conteúdo de qualidade para que eu pudesse entender melhor como desenvolver uma API Restful em Java, ao meu colega [Leonardo](https://github.com/Pokernol) que me auxilio com algumas das minhas dúvidas e por último ao [Ruan](https://github.com/ruann-fernandess) que foi um ótimo amigo durante todo este percurso.
 
 # Melhorias
 
 Neste tópico de melhorias, eu gostaria de descrever possíveis acertos que poderiam ser feitos e funcionalidades extras que poderiam ser implementadas para um melhor aproveitamento deste projeto:
+- Melhorar a implementação do Mapper
 - Implementar uma página HTML para melhor interação com o usuário.
 - Realizar a dockerização para facilitar a distribuição e o deploy da aplicação em qualquer ambiente.
 - Integrar Swagger para documentação interativa da API
