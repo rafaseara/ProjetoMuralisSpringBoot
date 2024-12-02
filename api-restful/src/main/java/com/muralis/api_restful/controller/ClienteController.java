@@ -18,22 +18,37 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    @GetMapping
+    public ResponseEntity<List<ClienteResponseDTO>> getAll() {
+        List<Cliente> clientes = clienteService.findAll();
+        List<ClienteResponseDTO> response = clientes.stream()
+                                                    .map(ClienteResponseDTO::new)
+                                                    .toList();
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ClienteResponseDTO> getById(@PathVariable Long id) {
         Cliente cliente = clienteService.findById(id);
         return ResponseEntity.ok(new ClienteResponseDTO(cliente));
     }
 
-    @GetMapping("/nome")
-    public ResponseEntity<List<Cliente>> findByName(@RequestParam String nome) {
-        List<Cliente> clientes = clienteService.findByName(nome);
-        return ResponseEntity.ok(clientes);
+    @GetMapping("/buscarNome")
+    public ResponseEntity<List<ClienteResponseDTO>> getByNome(@RequestParam String nome) {
+        List<Cliente> clientes = clienteService.findByNome(nome);
+        List<ClienteResponseDTO> response = clientes.stream()
+        .map(ClienteResponseDTO::new)
+        .toList();
+        return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/contato")
-    public ResponseEntity<List<Cliente>> findByContact(@RequestParam String telefone) {
-        List<Cliente> clientes = clienteService.findByContact(telefone);
-        return ResponseEntity.ok(clientes);
+    @GetMapping("/buscarContato")
+    public ResponseEntity<List<ClienteResponseDTO>> getByContato(@RequestParam String contato) {
+        List<Cliente> clientes = clienteService.findByContato(contato);
+        List<ClienteResponseDTO> response = clientes.stream()
+        .map(ClienteResponseDTO::new)
+        .toList();
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping
@@ -46,6 +61,7 @@ public class ClienteController {
     @PutMapping("/{id}")
     public ResponseEntity<ClienteResponseDTO> update(@PathVariable Long id, @RequestBody ClienteRequestDTO dto) throws BadRequestException {
         Cliente cliente = new Cliente(dto);
+        cliente.setDataCadastro(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))); 
         return ResponseEntity.ok(new ClienteResponseDTO(clienteService.update(id, cliente)));
     }
 

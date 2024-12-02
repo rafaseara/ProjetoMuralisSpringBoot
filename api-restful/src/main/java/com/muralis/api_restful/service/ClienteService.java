@@ -21,12 +21,12 @@ public class ClienteService {
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
     }
 
-    public List<Cliente> findByName(String nome) {
+    public List<Cliente> findByNome(String nome) {
         return clienteRepository.findByNomeContainingIgnoreCase(nome);
     }
 
-    public List<Cliente> findByContact(String telefone) {
-        return clienteRepository.findByTelefone(telefone);
+    public List<Cliente> findByContato(String contato) {
+        return clienteRepository.findByContato_TextoContainingIgnoreCase(contato);
     }
 
     public Cliente save(Cliente cliente) {
@@ -37,8 +37,9 @@ public class ClienteService {
         Cliente clienteExistente = findById(id);
         clienteExistente.setNome(cliente.getNome());
         clienteExistente.setContato(cliente.getContato());
+        clienteExistente.setDataCadastro(cliente.getDataCadastro()); 
         return clienteRepository.save(clienteExistente);
-    }
+    }    
 
     public void delete(Long id) {
         clienteRepository.deleteById(id);
