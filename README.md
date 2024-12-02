@@ -57,7 +57,7 @@ Dependências:
 
 Para demontrar o funcionamento da API realizei testes no Insomnia, para ve-los com maior detalhamento clique no link abaixo, assim você será redirecionado para o documento em questão
 
-👉 [Documento de teste](https://github.com/rafaseara/ProjetoMuralisSpringBoot/blob/main/doc/insomnia-tests.md)
+👉 [Documento de teste](doc/insomnia-tests.md)
 
 # Aprendizado
 
