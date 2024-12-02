@@ -37,7 +37,9 @@ public class ClienteService {
         Cliente clienteExistente = findById(id);
         clienteExistente.setNome(cliente.getNome());
         clienteExistente.setContato(cliente.getContato());
-        clienteExistente.setDataCadastro(cliente.getDataCadastro()); 
+        if (cliente.getDataCadastro() != null && !cliente.getDataCadastro().isEmpty()) {
+            clienteExistente.setDataCadastro(cliente.getDataCadastro());
+        }
         return clienteRepository.save(clienteExistente);
     }    
 

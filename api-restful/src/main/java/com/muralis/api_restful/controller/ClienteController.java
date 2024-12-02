@@ -60,8 +60,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ClienteResponseDTO> update(@PathVariable Long id, @RequestBody ClienteRequestDTO dto) throws BadRequestException {
-        Cliente cliente = new Cliente(dto);
-        cliente.setDataCadastro(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))); 
+        Cliente cliente = new Cliente(dto); 
         return ResponseEntity.ok(new ClienteResponseDTO(clienteService.update(id, cliente)));
     }
 

@@ -56,13 +56,14 @@ public class Cliente {
     }
 
     public void setDataCadastro(String dataCadastro) throws BadRequestException {
-        if (!dataCadastro.isBlank()) {
+        if (dataCadastro != null && !dataCadastro.isEmpty()) {
             if (!dataCadastro.matches("\\d{4}-\\d{2}-\\d{2}")) {
                 throw new BadRequestException("Data de cadastro inválida (formato esperado: yyyy-MM-dd)");
             }
             this.dataCadastro = dataCadastro;
         }
     }
+    
     public void setContato(Contato contato) throws BadRequestException {
         if (Objects.isNull(contato)) {
             throw new BadRequestException("Contato não pode ser nulo");
