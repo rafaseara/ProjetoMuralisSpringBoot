@@ -21,8 +21,12 @@ public class ClienteService {
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
     }
 
-    public List<Cliente> findByNomeOrContato(String nome, String contato) {
-        return clienteRepository.findByNomeOrContato(nome, contato);
+    public List<Cliente> findByName(String nome) {
+        return clienteRepository.findByNomeContainingIgnoreCase(nome);
+    }
+
+    public List<Cliente> findByContact(String telefone) {
+        return clienteRepository.findByTelefone(telefone);
     }
 
     public Cliente save(Cliente cliente) {

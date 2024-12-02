@@ -18,20 +18,22 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @GetMapping
-    public ResponseEntity<List<ClienteResponseDTO>> getAll(
-            @RequestParam(required = false) String nome,
-            @RequestParam(required = false) String contato) {
-        List<Cliente> clientes = clienteService.findByNomeOrContato(
-                nome != null ? nome : "", 
-                contato != null ? contato : "");
-        return ResponseEntity.ok(clientes.stream().map(ClienteResponseDTO::new).toList());
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<ClienteResponseDTO> getById(@PathVariable Long id) {
         Cliente cliente = clienteService.findById(id);
         return ResponseEntity.ok(new ClienteResponseDTO(cliente));
+    }
+
+    @GetMapping("/nome")
+    public ResponseEntity<List<Cliente>> findByName(@RequestParam String nome) {
+        List<Cliente> clientes = clienteService.findByName(nome);
+        return ResponseEntity.ok(clientes);
+    }
+
+    @GetMapping("/contato")
+    public ResponseEntity<List<Cliente>> findByContact(@RequestParam String telefone) {
+        List<Cliente> clientes = clienteService.findByContact(telefone);
+        return ResponseEntity.ok(clientes);
     }
 
     @PostMapping
