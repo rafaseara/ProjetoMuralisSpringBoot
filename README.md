@@ -20,8 +20,8 @@ Gerenciador de Dependências: Maven
 Banco de Dados: MySQL (conector mysql-connector-j)
 Dependências:
 - spring-boot-starter-web para criação de APIs RESTful.
-- spring-boot-starter-data-jpa para interação com o banco de dados utilizando JPA.
-- spring-boot-devtools para agilizar o desenvolvimento com recursos como hot-reload.
+- spring-boot-starter-data-jpa gerencia a comunicação com o banco de dados.
+- spring-boot-devtools para agilizar o desenvolvimento do código.
 - lombok para reduzir o código boilerplate.
 - spring-boot-starter-test para testes automatizados.
 
@@ -65,11 +65,11 @@ Realizar este projeto me trouxe diversos novos aprendizados, entre os principais
 
 # Melhorias
 
-Neste tópico de melhorias, eu gostaria de descrever possíveis acertos que poderiam ser feitos e funcionalidades extras que poderiam ser implementadas para um melhor aproveitamento deste projeto:
+Neste tópico de melhorias, eu gostaria de descrever possíveis acertos que poderiam ser feitos e funcionalidades extras que poderiam ser implementadas para um melhor aproveitamento deste projeto.  Ainda mais, levando em conta a minha proeficiência básica nesta linguagem, podem existir mudanças que melhorarão o desempenho geral do projeto, como:
 - Melhorar a implementação do Mapper
-- Implementar uma página HTML para melhor interação com o usuário.
+- Implementar uma página HTML para uma interação com o usuário.
 - Realizar a dockerização para facilitar a distribuição e o deploy da aplicação em qualquer ambiente.
-- Integrar Swagger para documentação interativa da API
+- Colocar mais mensagens de confirmação a cada alteração
 
 # Feedback
 Se houver algum feedback sobre meu projeto, por favor compartilhe comigo, deixo abaixo meu e-mail para que me deixe sabendo
